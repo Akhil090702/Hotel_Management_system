@@ -1,165 +1,140 @@
-#include<iostream>
-using namespace std;
+#include <iostream>
+#include <vector>
 
-int main()
-{
-	int Qrooms=0,Qpasta=0,Qburger=0,Qnoodles=0,Qshake=0,Qchicken=0;
-	
-	int Srooms=0,Spasta=0,Sburger=0,Snoodles=0,Sshake=0,Schicken=0;
-	
-	int Total_rooms=0,Total_pasta=0,Total_burger=0,Total_noodles=0,Total_shake=0,Total_chicken=0;
-	
-	int choice,q;
-	
-	cout<<"\n\t\tQuantity of items we have";
-	cout<<"\n Rooms avaliable : ";
-	cin>>Qrooms;
-	cout<<"\n Quantity of Pasta : ";
-	cin>>Qpasta;
-	cout<<"\n Quantity of Burger : ";
-	cin>>Qburger;
-	cout<<"\n Quantity of Noodles : ";
-	cin>>Qnoodles;
-	cout<<"\n Quantity of Shake : ";
-	cin>>Qshake;
-	cout<<"\n Quantity of Chicken-roll : ";
-	cin>>Qchicken;
-	p:
-//	system("cls");
-	cout<<"\n\t\t\tPlease select from the given menu options";
-	cout<<"\n\n 1) Rooms";
-	cout<<"\n 2) Pasta";
-	cout<<"\n 3) Burger";
-	cout<<"\n 4) Noodles";
-	cout<<"\n 5) Shake";
-	cout<<"\n 6) Chicken-roll";
-	cout<<"\n 7) Information regarding sales and collection";
-	cout<<"\n 8) Exit";
-	cout<<"\n\n Please enter Your Choice : ";
-	cin>>choice;
-	
-	switch(choice)
-	{
-	    case 1:
-			cout<<"\n\n Enter Number of rooms you want : ";
-			cin>>q;
-			if(Qrooms-Srooms >= q)
-			{
-				Srooms = Srooms + q;
-				Total_rooms =Total_rooms + (q*1200);
-				cout<<"\n\n\t\t"<<q<<" room/rooms have been alotted! ";	
-			}
-			else
-			
-			cout<<"\n\tOnly "<<Qrooms-Srooms<<" Rooms Remaining in hotel";
-			break;
-			
-	    
-		case 2:
-			cout<<"\n\n Enter Pasta Quantity : ";
-			cin>>q;
-			if(Qpasta-Spasta >= q)
-			{
-				Spasta =Spasta + q;
-				Total_pasta =Total_pasta + (q*250);
-				cout<<"\n\t"<<q<<" Pasta is the order";	
-			}
-			else
-			cout<<"\n\n\t\tOnly "<<Qpasta-Spasta<<" Pastas Remaining in stock";
-			break;
-			
-		case 3:
-			cout<<"\n\n Enter Burger Quantity : ";
-			cin>>q;
-			if(Qburger-Sburger >= q)
-			{
-				Sburger =Sburger + q;
-				Total_burger =Total_burger + q*50;
-				cout<<"\n\n\t\t"<<q<<" Burger is the order";	
-			}
-			else
-			cout<<"\n\tOnly "<<Qburger-Sburger<<" Burgers Remaining in stock";
-			break;
-			
-		case 4:
-			cout<<"\n\n Enter Noodles Quantity : ";
-			cin>>q;
-			if(Qnoodles-Snoodles >= q)
-			{
-				Snoodles =Snoodles + q;
-				Total_noodles =Total_noodles + (q*200);
-				cout<<"\n\n\t\t"<<q<<" Noodles is the order";	
-			}
-			else
-			cout<<"\n\tOnly "<<Qnoodles-Snoodles<<" Noodles Remaining in stock";
-			break;
-			
-		case 5:
-			cout<<"\n\n Enter Shakes Quantity : ";
-			cin>>q;
-			if(Qshake-Sshake >= q)
-			{
-				Sshake =Sshake + q;
-				Total_shake =Total_shake + q*170;
-				cout<<"\n\n\t\t"<<q<<" shakes is the order";	
-			}
-			else
-			cout<<"\n\tOnly "<<Qshake-Sshake<<" shakes Remaining in stock";
-			break;
-			
-		case 6:
-			cout<<"\n\n Enter Chicken-roll Quantity : ";
-			cin>>q;
-			if(Qchicken-Schicken >= q)
-			{
-				Schicken =Schicken + q;
-				Total_chicken =Total_chicken + q*160;
-				cout<<"\n\n\t\t"<<q<<" Chicken-rolls is the order";	
-			}
-			else
-			cout<<"\n\tOnly "<<Qchicken-Schicken<<" Chicken-roll Remaining in stock";
-			break;
-			
-		case 7:
+class HotelRoom {
+private:
+    int roomNumber;
+    bool isOccupied;
+public:
+    HotelRoom(int number) : roomNumber(number), isOccupied(false) {}
 
-			cout<<"\n\t\tDetails of sales and collection ";
-			cout<<"\n\n Number of Rooms we had : "<<Qrooms;
-			cout<<"\n Number of Rooms we gave for rent : "<<Srooms;
-			cout<<"\n Remaining Rooms : "<<Qrooms-Srooms;
-			cout<<"\n\n Total Rooms collection for the Day : "<<Total_rooms;
-			
-			cout<<"\n\n Number of Pastas we had : "<<Qpasta;
-			cout<<"\n Number of Pastas we sold : "<<Spasta;
-			cout<<"\n Remaining Pastas : "<<Qpasta-Spasta;
-			cout<<"\n\n Total Pasta collection for the Day : "<<Total_pasta;
-			
-			cout<<"\n\n Number of burgers we had : "<<Qburger;
-			cout<<"\n Number of burgers we sold : "<<Sburger;
-			cout<<"\n Remaining Burgers : "<<Qburger-Sburger;
-			cout<<"\n\n Total Burger collection for the Day : "<<Total_burger;
-			
-			cout<<"\n\n Number of Noodles we had : "<<Qnoodles;
-			cout<<"\n Number of Noodles we sold : "<<Snoodles;
-			cout<<"\n Remaining Noodles : "<<Qnoodles-Snoodles;
-			cout<<"\n\n Total Noodles collection for the Day : "<<Total_noodles;
-			
-			cout<<"\n\n Number of shakes we had : "<<Qshake;
-			cout<<"\n Number of Shakes we sold : "<<Sshake;
-			cout<<"\n Remaining Shakes : "<<Qshake-Sshake;
-			cout<<"\n\n Total Shakes collection for the Day : "<<Total_shake;
-			
-			cout<<"\n\n Number of Chicken-roll we had : "<<Qchicken;
-			cout<<"\n Number of Chicken-roll we sold : "<<Schicken;
-			cout<<"\n Remaining Chicken-roll : "<<Qchicken-Schicken;
-			cout<<"\n\n Total Chicken-roll collection for the Day : "<<Total_chicken;
-			
-			cout<<"\n\n\n Total Collection for the day : "<<Total_rooms+Total_pasta+Total_burger+Total_noodles+Total_shake+Total_chicken;
-			break;
-		case 8:
-			exit(0);
-		default:
-			cout<<"\n Please select from the numbers mentioned above!";
-	}
+    int getRoomNumber() const {
+        return roomNumber;
+    }
 
-	goto p;
+    bool getIsOccupied() const {
+        return isOccupied;
+    }
+
+    void setIsOccupied(bool occupied) {
+        isOccupied = occupied;
+    }
+};
+
+class Hotel {
+private:
+    std::vector<HotelRoom> rooms;
+    std::vector<std::string> foodMenu;
+    std::vector<std::string> foodOrdered;
+
+public:
+    Hotel() {
+        // Initialize hotel with rooms (for demonstration, let's assume 10 rooms)
+        for (int i = 1; i <= 10; ++i) {
+            rooms.emplace_back(HotelRoom(i));
+        }
+
+        // Initialize food menu
+        foodMenu = { "Burger", "Pizza", "Pasta", "Salad" };
+    }
+
+    void displayTotalRooms() const {
+        std::cout << "Total Rooms: " << rooms.size() << "\n";
+    }
+
+    void displayAvailableRooms() const {
+        std::cout << "Available Rooms:\n";
+        for (const auto& room : rooms) {
+            if (!room.getIsOccupied()) {
+                std::cout << "Room Number: " << room.getRoomNumber() << "\n";
+            }
+        }
+    }
+
+    void bookRoom(int roomNumber) {
+        for (auto& room : rooms) {
+            if (room.getRoomNumber() == roomNumber && !room.getIsOccupied()) {
+                room.setIsOccupied(true);
+                std::cout << "Room " << roomNumber << " has been booked.\n";
+                return;
+            }
+        }
+        std::cout << "Room " << roomNumber << " is not available.\n";
+    }
+
+    void orderFood(int choice) {
+        if (choice >= 1 && choice <= foodMenu.size()) {
+            std::cout << "You have ordered: " << foodMenu[choice - 1] << "\n";
+            foodOrdered.push_back(foodMenu[choice - 1]);
+        } else {
+            std::cout << "Invalid choice.\n";
+        }
+    }
+
+    void displayFoodOrdered() const {
+        std::cout << "Food items ordered:\n";
+        for (const auto& food : foodOrdered) {
+            std::cout << food << "\n";
+        }
+    }
+
+    void displayFoodMenu() const {
+        std::cout << "Food Menu:\n";
+        for (size_t i = 0; i < foodMenu.size(); ++i) {
+            std::cout << i + 1 << ". " << foodMenu[i] << "\n";
+        }
+    }
+};
+
+int main() {
+    Hotel hotel;
+
+    int choice;
+    int roomChoice;
+    int foodChoice;
+
+    std::cout << "Welcome to the Hotel Management System\n";
+
+    do {
+        std::cout << "\nMenu:\n";
+        std::cout << "1. Display Total Rooms\n";
+        std::cout << "2. Display Available Rooms\n";
+        std::cout << "3. Book a Room\n";
+        std::cout << "4. Order Food\n";
+        std::cout << "5. Display Food Items Ordered\n";
+        std::cout << "6. Exit\n";
+        std::cout << "Enter your choice: ";
+        std::cin >> choice;
+
+        switch (choice) {
+            case 1:
+                hotel.displayTotalRooms();
+                break;
+            case 2:
+                hotel.displayAvailableRooms();
+                break;
+            case 3:
+                std::cout << "Enter room number to book: ";
+                std::cin >> roomChoice;
+                hotel.bookRoom(roomChoice);
+                break;
+            case 4:
+                hotel.displayFoodMenu();
+                std::cout << "Enter food choice: ";
+                std::cin >> foodChoice;
+                hotel.orderFood(foodChoice);
+                break;
+            case 5:
+                hotel.displayFoodOrdered();
+                break;
+            case 6:
+                std::cout << "Exiting...\n";
+                break;
+            default:
+                std::cout << "Invalid choice. Please try again.\n";
+                break;
+        }
+    } while (choice != 6);
+
+    return 0;
 }
